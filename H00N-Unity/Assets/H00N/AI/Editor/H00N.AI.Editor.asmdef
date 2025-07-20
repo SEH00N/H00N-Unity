@@ -1,0 +1,16 @@
+{
+    "name": "H00N.AI.Editor",
+    "rootNamespace": "",
+    "references": [
+        "GUID:5f46f407747d74b2391d62b1344c27f2"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

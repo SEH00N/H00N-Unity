@@ -1,0 +1,17 @@
+{
+    "name": "H00N.AI.FSM",
+    "rootNamespace": "H00N.AI.FSM",
+    "references": [
+        "GUID:246924d3cd2ff4a19a6313f37f60ab5e",
+        "GUID:5f46f407747d74b2391d62b1344c27f2"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

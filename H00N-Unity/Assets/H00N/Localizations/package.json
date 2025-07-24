@@ -1,0 +1,14 @@
+{
+    "name": "com.h00n.localizations",
+    "displayName": "H00N.Localizations",
+    "author": { "name": "H00N", "email": "06psh0501@gmail.com", "url": "https://github.com/SEH00N" },
+    "version": "0.0.1",
+    "unity": "2022.3",
+    "description": "H00N.Localizations",
+    "keywords": [ "H00N" ],
+    "licensesUrl": "https://github.com/SEH00N/H00N-Unity/blob/main/LICENSE",
+    "dependencies": { 
+        "com.unity.textmeshpro": "^3.0.6",
+        "com.unity.localization": "^1.4.5"
+    }
+}

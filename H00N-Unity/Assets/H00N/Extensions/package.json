@@ -1,0 +1,11 @@
+{
+    "name": "com.h00n.extensions",
+    "displayName": "H00N.Extensions",
+    "author": { "name": "H00N", "email": "06psh0501@gmail.com", "url": "https://github.com/SEH00N" },
+    "version": "0.0.1",
+    "unity": "2022.3",
+    "description": "H00N.Extensions",
+    "keywords": [ "H00N" ],
+    "licensesUrl": "https://github.com/SEH00N/H00N-Unity/blob/main/LICENSE",
+    "dependencies": { }
+}

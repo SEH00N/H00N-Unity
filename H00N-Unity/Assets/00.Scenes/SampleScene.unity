@@ -133,6 +133,7 @@ GameObject:
   m_Component:
   - component: {fileID: 482237127}
   - component: {fileID: 482237126}
+  - component: {fileID: 482237128}
   m_Layer: 0
   m_Name: AIDataContainerTest
   m_TagString: Untagged
@@ -158,7 +159,6 @@ MonoBehaviour:
       unityObjectReference: {fileID: 0}
       serializableObjectReference:
         rid: 3777565075454558226
-  aiDataList: 
   references:
     version: 2
     RefIds:
@@ -181,6 +181,42 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &482237128
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 482237125}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f539034c1d1154bccbfbef3238334468, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnStateChangedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  aiDataContainer:
+    aiDataList:
+    - wrapType: 1
+      unityObjectReference: {fileID: 0}
+      serializableObjectReference:
+        rid: -2
+    - wrapType: 2
+      unityObjectReference: {fileID: 0}
+      serializableObjectReference:
+        rid: 3777565169140105216
+  defaultState: {fileID: 0}
+  anyState: {fileID: 0}
+  references:
+    version: 2
+    RefIds:
+    - rid: -2
+      type: {class: , ns: , asm: }
+    - rid: 3777565169140105216
+      type: {class: AIDataContainerTest/TestAIData, ns: , asm: Assembly-CSharp}
+      data:
+        testInt: 0
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0

@@ -1,0 +1,13 @@
+{
+    "name": "com.h00n.resources",
+    "displayName": "H00N.Resources",
+    "author": { "name": "H00N", "email": "06psh0501@gmail.com", "url": "https://github.com/SEH00N" },
+    "version": "0.0.1",
+    "unity": "2022.3",
+    "description": "H00N.Resources",
+    "keywords": [ "H00N" ],
+    "licensesUrl": "https://github.com/SEH00N/H00N-Unity/blob/main/LICENSE",
+    "dependencies": { 
+        "com.cysharp.unitask": "^2.5.10"
+    }
+}

@@ -8,7 +8,6 @@
     "keywords": [ "H00N" ],
     "licensesUrl": "https://github.com/SEH00N/H00N-Unity/blob/main/LICENSE",
     "dependencies": { 
-        "com.unity.textmeshpro": "^3.0.6",
         "com.unity.localization": "^1.4.5"
     }
 }

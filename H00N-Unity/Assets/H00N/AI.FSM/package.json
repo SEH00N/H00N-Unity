@@ -2,7 +2,7 @@
     "name": "com.h00n.ai.fsm",
     "displayName": "H00N.AI.FSM",
     "author": { "name": "H00N", "email": "06psh0501@gmail.com", "url": "https://github.com/SEH00N" },
-    "version": "0.0.2",
+    "version": "0.0.3",
     "unity": "2022.3",
     "description": "H00N.AI.FSM",
     "keywords": [ "H00N" ],

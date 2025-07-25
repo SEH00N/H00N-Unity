@@ -4,6 +4,7 @@ using UnityEngine.Events;
 
 namespace H00N.AI.FSM
 {
+    [RequireComponent(typeof(FSMTransitionGroup))]
     public class FSMState : MonoBehaviour
     {
         [SerializeField] bool autoTransitioning = true;

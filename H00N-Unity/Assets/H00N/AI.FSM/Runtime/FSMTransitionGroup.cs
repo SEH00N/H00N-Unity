@@ -13,7 +13,7 @@ namespace H00N.AI.FSM
             base.Init(brain, state);
 
             transitions = new List<FSMTransition>(transform.childCount);
-            transform.GetComponentsInChildren<FSMTransition>(transitions, false, false);
+            transform.GetComponentsInChildren<FSMTransition>(transitions, false, false, false);
             transitions.ForEach(i => i.Init(brain, state));
 
             if(transitions.Count <= 0)

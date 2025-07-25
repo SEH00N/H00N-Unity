@@ -12,17 +12,23 @@ namespace H00N.Extensions
             return sqrDistanceA.CompareTo(sqrDistanceB);
         }
 
-        public static void GetComponentsInChildren<T>(this Transform transform, List<T> result, bool includeSelf, bool recursive = true) where T : Component
+        public static void GetComponentsInChildren<T>(this Transform transform, List<T> result, bool includeSelf, bool recursive = true) where T : Component => GetComponentsInChildren(transform, result, includeSelf, true, recursive);
+        public static void GetComponentsInChildren<T>(this Transform transform, List<T> result, bool includeSelf, bool includeInactive, bool recursive = true) where T : Component
         {
             if(includeSelf)
-                result.AddRange(transform.GetComponents<T>());
+            {
+                if(includeInactive || transform.gameObject.activeInHierarchy)
+                    result.AddRange(transform.GetComponents<T>());
+            }
 
             foreach(Transform child in transform)
             {
-                result.AddRange(child.GetComponents<T>());
+                if(includeInactive || child.gameObject.activeInHierarchy)
+                    result.AddRange(child.GetComponents<T>());
+
                 if (recursive)
-                    child.GetComponentsInChildren(result, false, true);
-            }            
+                    child.GetComponentsInChildren(result, false, includeInactive, true);
+            }   
         }
     }
 }

@@ -31,6 +31,7 @@ namespace H00N.AI.FSM
             states.ForEach(i => i.Init(this));
 
             isInitialized = true;
+            isActived = true;
         }
 
         protected virtual void Update()

@@ -2,13 +2,13 @@
     "name": "com.h00n.ai.fsm",
     "displayName": "H00N.AI.FSM",
     "author": { "name": "H00N", "email": "06psh0501@gmail.com", "url": "https://github.com/SEH00N" },
-    "version": "0.0.4",
+    "version": "0.0.5",
     "unity": "2022.3",
     "description": "H00N.AI.FSM",
     "keywords": [ "H00N" ],
     "licensesUrl": "https://github.com/SEH00N/H00N-Unity/blob/main/LICENSE",
     "dependencies": { 
         "com.h00n.ai": "^0.0.1",
-        "com.h00n.extensions": "^0.0.1"
+        "com.h00n.extensions": "^0.0.2"
     }
 }

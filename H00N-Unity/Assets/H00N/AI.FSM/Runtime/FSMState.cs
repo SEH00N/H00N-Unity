@@ -4,7 +4,7 @@ using UnityEngine.Events;
 
 namespace H00N.AI.FSM
 {
-    [RequireComponent(typeof(FSMTransitionGroup))]
+    [RequireComponent(typeof(FSMRootTransitionGroup))]
     public class FSMState : MonoBehaviour
     {
         [SerializeField] bool autoTransitioning = true;
@@ -16,7 +16,7 @@ namespace H00N.AI.FSM
         protected FSMBrain brain;
 
         private List<FSMAction> actions = null;
-        private FSMTransitionGroup rootTransitionGroup = null;
+        private FSMRootTransitionGroup rootTransitionGroup = null;
 
         public void Init(FSMBrain brain)
         {
@@ -26,7 +26,7 @@ namespace H00N.AI.FSM
             GetComponents<FSMAction>(actions);
             actions.ForEach(i => i.Init(brain, this));
 
-            rootTransitionGroup = GetComponent<FSMTransitionGroup>();
+            rootTransitionGroup = GetComponent<FSMRootTransitionGroup>();
             if(rootTransitionGroup != null)
                 rootTransitionGroup.Init(brain, this);
 

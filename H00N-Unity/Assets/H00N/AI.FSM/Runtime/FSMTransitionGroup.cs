@@ -14,7 +14,17 @@ namespace H00N.AI.FSM
 
             transitions = new List<FSMTransition>(transform.childCount);
             transform.GetComponentsInChildren<FSMTransition>(transitions, false, false, false);
-            transitions.ForEach(i => i.Init(brain, state));
+
+            for(int i = transitions.Count - 1; i >= 0; i--)
+            {
+                if(transitions[i] is FSMRootTransitionGroup)
+                {
+                    transitions.RemoveAt(i);
+                    continue;
+                }
+
+                transitions[i].Init(brain, state);
+            }
 
             if(transitions.Count <= 0)
                 Debug.LogWarning("[FSM] There are no child transitions in the transition group.");

@@ -12,3 +12,8 @@ H00N Unity Module Package
 |**H00N.Resources**|https://github.com/SEH00N/H00N-Unity.git?path=H00N-Unity/Assets/H00N/Resources|
 |**H00N.Resources.Addressables**|https://github.com/SEH00N/H00N-Unity.git?path=H00N-Unity/Assets/H00N/Resources.Addressables|
 |**H00N.Utilities**|https://github.com/SEH00N/H00N-Unity.git?path=H00N-Unity/Assets/H00N/Utilities|
+|**ShibaInspector**|https://github.com/SEH00N/H00N-Unity.git?path=H00N-Unity/Assets/ShibaInspector|
+
+## Authors
+
+[SEH00N](https://github.com/SEH00N), [JUNSUNG](https://github.com/JUNSUNG06)

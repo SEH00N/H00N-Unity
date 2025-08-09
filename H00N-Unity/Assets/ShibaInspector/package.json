@@ -1,0 +1,11 @@
+{
+    "name": "com.junsung.shiba-inspector",
+    "displayName": "ShibaInspector",
+    "author": { "name": "JUNSUNG", "email": "forest2847@gmail.com", "url": "https://github.com/JUNSUNG06" },
+    "version": "0.0.1",
+    "unity": "2022.3",
+    "description": "ShibaInspector",
+    "keywords": [ "ShibaInspector" ],
+    "licensesUrl": "https://github.com/SEH00N/H00N-Unity/blob/main/LICENSE",
+    "dependencies": { }
+}

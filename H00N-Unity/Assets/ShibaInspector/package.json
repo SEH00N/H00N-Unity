@@ -2,7 +2,7 @@
     "name": "com.junsung.shiba-inspector",
     "displayName": "ShibaInspector",
     "author": { "name": "JUNSUNG", "email": "forest2847@gmail.com", "url": "https://github.com/JUNSUNG06" },
-    "version": "0.0.1",
+    "version": "0.0.2",
     "unity": "2022.3",
     "description": "ShibaInspector",
     "keywords": [ "ShibaInspector" ],

@@ -51,5 +51,15 @@ namespace ShibaInspector.Collections
 
         public IEnumerator<KeyValuePair<TKey, TValue>> GetEnumerator() => myDictionary.GetEnumerator();
         IEnumerator IEnumerable.GetEnumerator() => GetEnumerator();
+
+        public void Add(TKey key, TValue value) => myDictionary.Add(key, value);
+        public bool ContainsKey(TKey key) => myDictionary.ContainsKey(key);
+        public bool ContainsValue(TValue value) => myDictionary.ContainsValue(value);
+        public bool Remove(TKey key) => myDictionary.Remove(key);
+        public void Clear() => myDictionary.Clear();
+        public bool TryAdd(TKey key, TValue value) => myDictionary.TryAdd(key, value);
+        public bool TryGetValue(TKey key, out TValue value) => myDictionary.TryGetValue(key, out value);
+
+        public static implicit operator Dictionary<TKey, TValue>(SerializableDictionary<TKey, TValue> serializableDictionary) => serializableDictionary.myDictionary;
     }
 }

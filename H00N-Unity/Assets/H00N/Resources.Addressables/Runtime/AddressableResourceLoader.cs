@@ -1,7 +1,6 @@
 using System;
 using Cysharp.Threading.Tasks;
 using UnityEngine;
-using UnityEngine.AddressableAssets;
 using UnityEngine.ResourceManagement.AsyncOperations;
 using Object = UnityEngine.Object;
 
@@ -12,20 +11,16 @@ namespace H00N.Resources.Addressables
         public async UniTask<ResourceHandle> LoadResourceAsync<T>(string resourceName) where T : Object
         {
             if(typeof(T).IsSubclassOf(typeof(Component)))
-                return await LoadResourceInternal<GameObject>(resourceName, true);
+                return await LoadResourceInternal<GameObject>(resourceName);
             else
-                return await LoadResourceInternal<T>(resourceName, false);
+                return await LoadResourceInternal<T>(resourceName);
         }
 
-        private async UniTask<ResourceHandle> LoadResourceInternal<T>(string resourceName, bool isAsync) where T : Object
+        private async UniTask<ResourceHandle> LoadResourceInternal<T>(string resourceName) where T : Object
         {
             try {
                 AsyncOperationHandle<T> requestHandle = UnityEngine.AddressableAssets.Addressables.LoadAssetAsync<T>(resourceName);
-
-                if(isAsync)
-                    await requestHandle.Task;
-                else
-                    requestHandle.WaitForCompletion();
+                await requestHandle.Task;
 
                 if(requestHandle.Status != AsyncOperationStatus.Succeeded)
                 {
@@ -33,7 +28,7 @@ namespace H00N.Resources.Addressables
                     return null;
                 }
                 
-                ResourceHandle resourceHandle = new ResourceHandle(resourceName, requestHandle.Result);
+                ResourceHandle resourceHandle = new AddressableResourceHandle(resourceName, requestHandle.Result, requestHandle);
                 return resourceHandle;
             } 
             catch(Exception err) {

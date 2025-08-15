@@ -125,7 +125,7 @@ namespace H00N.Resources
             handle.Release();
         }
 
-        public static async UniTask<T> LoadResourceWithoutCahingAsync<T>(string resourceName) where T : Object
+        public static async UniTask<ResourceHandle> LoadResourceWithoutCahingAsync<T>(string resourceName) where T : Object
         {
             if(string.IsNullOrEmpty(resourceName))
                 return null;
@@ -137,10 +137,7 @@ namespace H00N.Resources
                 return null;
             }
 
-            T resource = handle.Get<T>();
-
-            handle.Release();
-            return resource;
+            return handle;
         }
     }
 }

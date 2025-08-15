@@ -11,6 +11,7 @@ namespace ShibaInspector.Attributes
         public ConditionalFieldAttribute(string conditionalSourceField)
         {
             this.ConditionalSourceField = conditionalSourceField;
+            this.CompareValue = true;
             this.HideInInspector = false;
         }
 

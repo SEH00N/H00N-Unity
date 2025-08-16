@@ -8,7 +8,7 @@ using System.Collections.Generic;
 namespace ShibaInspector.Attributes
 {
     // 모든 MonoBehaviour에 적용
-    [CustomEditor(typeof(MonoBehaviour), true)]
+    [CustomEditor(typeof(MonoBehaviour), true), CanEditMultipleObjects]
     public class ButtonAttributeEditor : Editor
     {
         

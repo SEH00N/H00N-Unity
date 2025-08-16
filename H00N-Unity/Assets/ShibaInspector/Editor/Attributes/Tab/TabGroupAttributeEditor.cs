@@ -7,7 +7,7 @@ using UnityEngine;
 
 namespace ShibaInspector.Attributes
 {
-[CustomEditor(typeof(MonoBehaviour), true)]
+[CustomEditor(typeof(MonoBehaviour), true), CanEditMultipleObjects]
 public class TabGroupAttributeEditor : Editor
 {
     // 저장: group name -> list of tab names

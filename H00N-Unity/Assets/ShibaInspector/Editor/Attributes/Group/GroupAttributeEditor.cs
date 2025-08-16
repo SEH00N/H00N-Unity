@@ -24,7 +24,7 @@ internal class GroupNode
 }
 
 // 3. Custom Editor
-[CustomEditor(typeof(MonoBehaviour), true)]
+[CustomEditor(typeof(MonoBehaviour), true), CanEditMultipleObjects]
 public class GroupAttributeEditor : Editor
 {
     private GroupNode root;

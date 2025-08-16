@@ -123,6 +123,7 @@ namespace H00N.Resources
                 return;
 
             handle.Release();
+            resourceCache.Remove(resourceName);
         }
 
         public static async UniTask<ResourceHandle> LoadResourceWithoutCahingAsync<T>(string resourceName) where T : Object

@@ -2,14 +2,14 @@
     "name": "com.h00n.resources.addressables",
     "displayName": "H00N.Resources.Addressables",
     "author": { "name": "H00N", "email": "06psh0501@gmail.com", "url": "https://github.com/SEH00N" },
-    "version": "0.0.3",
+    "version": "0.0.4",
     "unity": "2022.3",
     "description": "H00N.Resources.Addressables",
     "keywords": [ "H00N" ],
     "licensesUrl": "https://github.com/SEH00N/H00N-Unity/blob/main/LICENSE",
     "dependencies": { 
         "com.cysharp.unitask": "^2.5.10",
-        "com.h00n.resources": "^0.0.2",
+        "com.h00n.resources": "^0.0.3",
         "com.unity.addressables": "^1.21.21"
     }
 }

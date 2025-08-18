@@ -139,6 +139,7 @@ namespace H00N.Resources.Pools
 
             if(instance.Key == null)
             {
+                instance.Despawn();
                 Object.Destroy(instance.gameObject);
                 return;
             }
@@ -146,6 +147,7 @@ namespace H00N.Resources.Pools
             if(poolTable.TryGetValue(instance.Key, out Pool pool) == false)
             {
                 Debug.LogWarning($"[PoolManager::Despawn] Pool not found. instance.Key : {instance.Key}");
+                instance.Despawn();
                 Object.Destroy(instance.gameObject);
                 return;
             }

@@ -2,7 +2,7 @@
     "name": "com.h00n.resources.addressables",
     "displayName": "H00N.Resources.Addressables",
     "author": { "name": "H00N", "email": "06psh0501@gmail.com", "url": "https://github.com/SEH00N" },
-    "version": "0.0.4",
+    "version": "0.0.5",
     "unity": "2022.3",
     "description": "H00N.Resources.Addressables",
     "keywords": [ "H00N" ],

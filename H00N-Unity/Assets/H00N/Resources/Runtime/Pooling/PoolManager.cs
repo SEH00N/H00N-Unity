@@ -159,5 +159,18 @@ namespace H00N.Resources.Pools
             instance.gameObject.SetActive(false);
             instance.transform.SetParent(poolParent);
         }
+
+        public static void RemovePool(PoolReference resource) => RemovePool(resource.Key);
+        public static void RemovePool(string resourceName)
+        {
+            if(string.IsNullOrEmpty(resourceName))
+                return;
+
+            if(poolTable.TryGetValue(resourceName, out Pool pool) == false)
+                return;
+
+            pool.Release();
+            poolTable.Remove(resourceName);
+        }
     }
 }

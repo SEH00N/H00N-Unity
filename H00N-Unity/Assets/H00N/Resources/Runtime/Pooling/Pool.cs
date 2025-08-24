@@ -19,7 +19,7 @@ namespace H00N.Resources.Pools
             foreach(PoolReference instance in pool)
             {
                 if(instance != null)
-                    Object.Destroy(instance);
+                    Object.Destroy(instance.gameObject);
             }
 
             pool = null;

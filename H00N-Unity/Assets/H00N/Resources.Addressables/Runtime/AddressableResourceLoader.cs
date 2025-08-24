@@ -38,7 +38,8 @@ namespace H00N.Resources.Addressables
             }
         }
 
-        public static async UniTask<List<string>> LoadResourcesByLabelAsync(string label)
+        public static UniTask<List<string>> LoadResourcesByLabelAsync(string label) => LoadResourcesByLabelAsync<Object>(label);
+        public static async UniTask<List<string>> LoadResourcesByLabelAsync<T>(string label) where T : Object
         {
             IList<UnityEngine.ResourceManagement.ResourceLocations.IResourceLocation> locations = await UnityEngine.AddressableAssets.Addressables.LoadResourceLocationsAsync(label);
             List<string> resourceNames = new List<string>();
@@ -46,13 +47,14 @@ namespace H00N.Resources.Addressables
             {
                 string resourceName = locations[i].PrimaryKey;
                 resourceNames.Add(resourceName);
-                await ResourceManager.LoadResourceAsync(resourceName);
+                await ResourceManager.LoadResourceAsync<T>(resourceName);
             }
 
             return resourceNames;
         }
 
-        public static async UniTask<List<string>> ReleaseResourcesByLabelAsync(string label)
+        public static UniTask<List<string>> ReleaseResourcesByLabelAsync(string label) => ReleaseResourcesByLabelAsync<Object>(label);
+        public static async UniTask<List<string>> ReleaseResourcesByLabelAsync<T>(string label) where T : Object
         {
             IList<UnityEngine.ResourceManagement.ResourceLocations.IResourceLocation> locations = await UnityEngine.AddressableAssets.Addressables.LoadResourceLocationsAsync(label);
             List<string> resourceNames = new List<string>();

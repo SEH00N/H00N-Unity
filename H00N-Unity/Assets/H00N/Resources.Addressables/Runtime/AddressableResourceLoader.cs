@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using Cysharp.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.ResourceManagement.AsyncOperations;
@@ -35,6 +36,20 @@ namespace H00N.Resources.Addressables
                 Debug.LogWarning(err);
                 return null;
             }
+        }
+
+        public static async UniTask LoadResourcesByLabelAsync(string label)
+        {
+            IList<UnityEngine.ResourceManagement.ResourceLocations.IResourceLocation> locations = await UnityEngine.AddressableAssets.Addressables.LoadResourceLocationsAsync(label);
+            for(int i = 0; i < locations.Count; i++)
+                await ResourceManager.LoadResourceAsync(locations[i].PrimaryKey);
+        }
+
+        public static async UniTask ReleaseResourcesByLabelAsync(string label)
+        {
+            IList<UnityEngine.ResourceManagement.ResourceLocations.IResourceLocation> locations = await UnityEngine.AddressableAssets.Addressables.LoadResourceLocationsAsync(label);
+            for(int i = 0; i < locations.Count; i++)
+                ResourceManager.ReleaseResource(locations[i].PrimaryKey);
         }
     }
 }

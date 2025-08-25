@@ -76,5 +76,10 @@ namespace H00N.AI.FSM
         {
             return aiDataContainer.GetAIData<T>();
         }
+
+        public void SetAIData<T>(T aiData) where T : class, IAIData
+        {
+            aiDataContainer.SetAIData(aiData);
+        }
     }
 }

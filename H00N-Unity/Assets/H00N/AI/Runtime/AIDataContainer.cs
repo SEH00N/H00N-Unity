@@ -67,5 +67,32 @@ namespace H00N.AI
             aiDataDictionary.TryGetValue(type, out IAIData aiData);
             return aiData as T;
         }
+
+        public void SetAIData<T>(T aiData) where T : class, IAIData
+        {
+            if(isInitialized)
+            {
+                aiDataDictionary[aiData.GetType()] = aiData.Initialize();
+            }
+            else
+            {
+                bool isUnityObject = aiData is Object;
+                AIDataWrapper wrapper = new AIDataWrapper() {
+                    wrapType = isUnityObject ? AIDataWrapper.AIDataWrapType.UnityObject : AIDataWrapper.AIDataWrapType.SerializableObject,
+                    unityObjectReference = isUnityObject ? aiData as Object : null,
+                    serializableObjectReference = isUnityObject ? null : aiData
+                };
+
+                int index = aiDataList.FindIndex(i => i.GetAIData().GetType() == aiData.GetType());
+                if(index != -1)
+                {
+                    aiDataList[index] = wrapper;
+                }
+                else
+                {
+                    aiDataList.Add(wrapper);
+                }
+            }
+        }
     }
 }

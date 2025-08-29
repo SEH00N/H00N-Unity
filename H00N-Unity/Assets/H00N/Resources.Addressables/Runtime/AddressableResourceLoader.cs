@@ -38,34 +38,31 @@ namespace H00N.Resources.Addressables
             }
         }
 
-        public static UniTask<List<string>> LoadResourcesByLabelAsync(string label) => LoadResourcesByLabelAsync<Object>(label);
-        public static async UniTask<List<string>> LoadResourcesByLabelAsync<T>(string label) where T : Object
+        public static UniTask LoadResourcesByLabelAsync(string label, List<string> resources = null) => LoadResourcesByLabelAsync<Object>(label, resources);
+        public static async UniTask LoadResourcesByLabelAsync<T>(string label, List<string> resources = null) where T : Object
         {
             IList<UnityEngine.ResourceManagement.ResourceLocations.IResourceLocation> locations = await UnityEngine.AddressableAssets.Addressables.LoadResourceLocationsAsync(label, typeof(T));
-            List<string> resourceNames = new List<string>();
+            UniTask[] tasks = new UniTask[locations.Count];
             for(int i = 0; i < locations.Count; i++)
             {
                 string resourceName = locations[i].PrimaryKey;
-                resourceNames.Add(resourceName);
-                await ResourceManager.LoadResourceAsync<T>(resourceName);
+                resources?.Add(resourceName);
+                tasks[i] = ResourceManager.LoadResourceAsync<T>(resourceName);
             }
 
-            return resourceNames;
+            await UniTask.WhenAll(tasks);
         }
 
-        public static UniTask<List<string>> ReleaseResourcesByLabelAsync(string label) => ReleaseResourcesByLabelAsync<Object>(label);
-        public static async UniTask<List<string>> ReleaseResourcesByLabelAsync<T>(string label) where T : Object
+        public static UniTask ReleaseResourcesByLabelAsync(string label, List<string> resources = null) => ReleaseResourcesByLabelAsync<Object>(label, resources);
+        public static async UniTask ReleaseResourcesByLabelAsync<T>(string label, List<string> resources = null) where T : Object
         {
             IList<UnityEngine.ResourceManagement.ResourceLocations.IResourceLocation> locations = await UnityEngine.AddressableAssets.Addressables.LoadResourceLocationsAsync(label, typeof(T));
-            List<string> resourceNames = new List<string>();
             for(int i = 0; i < locations.Count; i++)
             {
                 string resourceName = locations[i].PrimaryKey;
-                resourceNames.Add(resourceName);
+                resources?.Add(resourceName);
                 ResourceManager.ReleaseResource(resourceName);
             }
-
-            return resourceNames;
         }
     }
 }

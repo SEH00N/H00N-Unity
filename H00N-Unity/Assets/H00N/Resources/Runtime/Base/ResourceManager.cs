@@ -92,9 +92,11 @@ namespace H00N.Resources
             {
                 do
                 {
-                    await UniTask.Delay(50);
+                    await UniTask.Delay(50, DelayType.UnscaledDeltaTime);
                 }
-                while(loadingResourceKeys.Contains(resourceName) || resourceCache.TryGetValue(resourceName, out resourceHandle) == false);
+                while(loadingResourceKeys.Contains(resourceName));
+
+                resourceCache.TryGetValue(resourceName, out resourceHandle);
                 return resourceHandle;
             }
 

@@ -94,9 +94,7 @@ namespace H00N.Resources
                 {
                     await UniTask.Delay(50);
                 }
-                while(loadingResourceKeys.Contains(resourceName));
-
-                resourceCache.TryGetValue(resourceName, out resourceHandle);
+                while(loadingResourceKeys.Contains(resourceName) || resourceCache.TryGetValue(resourceName, out resourceHandle) == false);
                 return resourceHandle;
             }
 

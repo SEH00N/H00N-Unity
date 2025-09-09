@@ -8,6 +8,6 @@
     "keywords": [ "H00N" ],
     "licensesUrl": "https://github.com/SEH00N/H00N-Unity/blob/main/LICENSE",
     "dependencies": { 
-        "com.cysharp.unitask": "^2.5.10"
+        "com.cysharp.unitask": "2.5.10"
     }
 }
